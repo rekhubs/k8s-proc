@@ -5,7 +5,7 @@ Some notes and records for POC: port and run existing Spring Cloud microservices
 
 ### Topics
 * [Setup runtime](Setup-runtime)
-* [Tools record](/wiki/Tools-record)
+* [Tools record](../../wiki/Tools-record)
 * [Dashboard](Dashboard)
 * [Build docker images for the services](wiki/Build-docker-image-for-the-services)
 * [Build and run workloads - pod, deployment, service](Build-and-run-workloads)
