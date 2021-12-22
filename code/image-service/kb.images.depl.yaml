@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: images-depl-test
+  labels:
+    app: images-depl-test
+spec:
+  selector:
+    matchLabels:
+      app: images-depl-test
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: images-depl-test
+    spec:
+      containers:
+      - name: images-dev-kub
+        image: my-tradev/diagnostic-images-library
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8105
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: "d2"
+      #      ports:
+      #        - name: foo
+      #          port: 80
+      #          targetPort: 8080
+      # dnsPolicy: "None"
+      # dnsPolicy: "ClusterFirst"
+      # dnsConfig:
+      #   nameservers:
+      #     - 172.17.100.11
+      #   searches:
+      #     - my.dev.network.nz
+      #   options:
+      #     - name: ndots
+      #       value: "2"
+      #     - name: edns0
+
